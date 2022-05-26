@@ -19,7 +19,8 @@
         <div>
             <div class="pull-left">
                 <a asp-action="Create" class="btn btn-primary">
-                    <span title="Register New" class="fas fa-plus"></span> Register New
+                    <span title="Register New" class="fas fa-plus">
+                    </span> Register New
                 </a>
             </div>
         </div>
@@ -31,7 +32,7 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Name)
+                    @Html.DisplayNameFor(model => model.Name) @*Exibe o nome da propriedade do model*@
                 </th>
                 <th></th>
             </tr>
@@ -41,14 +42,14 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Name)
+                        @Html.DisplayFor(modelItem => item.Name) @*Exibe o valor da propriedade do model*@
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-warning">
+                        <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-warning"> @*asp-action representa o nome do método Action do controlador usado.*@
                             <span class="fas fa-edit">Edit</span>
                         </a>
 
-                        <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="btn btn-primary">
+                        <a asp-action="Details" asp-route-id="@item.Id" title="Details" class="btn btn-primary"> @*asp-route-{value} permite um prefixo de roteamento de caractere curinga Qualquer valor em {value} é interpretado como um possível parâmetro de roteamento.*@
                             <span class="fas fa-search">Details</span>
                         </a>
 

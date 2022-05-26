@@ -42,7 +42,7 @@ namespace CleanArchMvc.WebUI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(); //Aqui que é carregados as bibliotecas estáticas que ficam dentro de wwwroot 
 
             app.UseRouting();
 
@@ -52,7 +52,7 @@ namespace CleanArchMvc.WebUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Products}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
