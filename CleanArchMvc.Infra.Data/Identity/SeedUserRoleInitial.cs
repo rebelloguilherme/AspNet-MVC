@@ -19,7 +19,7 @@ namespace CleanArchMvc.Infra.Data.Identity
             _roleManager = roleManager;
         }
 
-        private void CreateUserOnRoles(string name, string password, Roles role)
+        private void CreateUserOnRoles(string name, string password, String role)
         {
             if (_userManager.FindByEmailAsync($"{name}@localhost").Result == null)
             {
@@ -36,7 +36,7 @@ namespace CleanArchMvc.Infra.Data.Identity
 
                 if (result.Succeeded)
                 {
-                    _userManager.AddToRoleAsync(user, role.ToString()).Wait();
+                    _userManager.AddToRoleAsync(user, role).Wait();
                 }
 
             }
@@ -53,8 +53,8 @@ namespace CleanArchMvc.Infra.Data.Identity
         }
         public void SeedUsers()
         {
-            CreateUserOnRoles("guilherme", "123@Abc", Roles.Admin);
-            CreateUserOnRoles("Fernando", "321@Cba", Roles.User);
+            CreateUserOnRoles("guilherme", "1234567@Abc", Roles.Admin.ToString());
+            CreateUserOnRoles("Fernando", "654321@Cba", Roles.User.ToString());
         }
         public void SeedRoles()
         {
