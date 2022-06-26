@@ -17,4 +17,8 @@
     <ProjectReference Include="..\CleanArchMvc.Infra.Ioc\CleanArchMvc.Infra.Ioc.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<None Update="CleanArchDB1.mdf" CoptyToOutputDirectory="PreserveNewest" /> 
+	</ItemGroup>
+
 </Project>
